@@ -4,9 +4,10 @@ function nextQuestion() {
     for (var i = 0; i < options.length; i++) {
         if (options[i].checked) {
             var selected = options[i].value;
-            var userAnswer = questions[index - 1][`option${selected}`];
-            var correctAns = questions[index - 1].correctAnswer;
 
+            // ✅ FIX (index - 1 hata diya)
+            var userAnswer = questions[index][`option${selected}`];
+            var correctAns = questions[index].correctAnswer;
 
             if (userAnswer === correctAns) {
                 score++;
@@ -17,7 +18,9 @@ function nextQuestion() {
         }
     }
 
-    if (index > questions.length - 1) {
+    index++; // ✅ yahan increment
+
+    if (index >= questions.length) {
         document.querySelector(".quiz-box").innerHTML = `
             <h1>Quiz Finished 🎉</h1>
             <h2>Your Score: ${score}/${questions.length}</h2>
@@ -28,6 +31,6 @@ function nextQuestion() {
         option1.innerText = questions[index].option1;
         option2.innerText = questions[index].option2;
         option3.innerText = questions[index].option3;
-        index++;
     }
 }
+
