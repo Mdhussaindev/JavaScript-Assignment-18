@@ -4,10 +4,14 @@ function nextQuestion() {
     for (var i = 0; i < options.length; i++) {
         if (options[i].checked) {
             var selected = options[i].value;
-
-            // ✅ FIX (index - 1 hata diya)
             var userAnswer = questions[index][`option${selected}`];
             var correctAns = questions[index].correctAnswer;
+
+if (selected === correctAns) {
+    score++;
+}
+
+    if (userAnswer === correctAns)
 
             if (userAnswer === correctAns) {
                 score++;
@@ -55,3 +59,4 @@ var interval = setInterval(function () {
 }, 1000);
 
 nextQuestion();
+
