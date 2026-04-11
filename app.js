@@ -1,7 +1,6 @@
 let index = 0;
 let score = 0;
 
-// Questions
 let questions = [
     {
         question: "2 + 2 = ?",
@@ -11,15 +10,36 @@ let questions = [
         correctAnswer: "2"
     },
     {
-        question: "5 + 3 = ?",
-        option1: "5",
-        option2: "8",
+        question: "5 × 3 = ?",
+        option1: "15",
+        option2: "10",
+        option3: "8",
+        correctAnswer: "1"
+    },
+    {
+        question: "Capital of Pakistan?",
+        option1: "Lahore",
+        option2: "Karachi",
+        option3: "Islamabad",
+        correctAnswer: "3"
+    },
+    {
+        question: "10 ÷ 2 = ?",
+        option1: "2",
+        option2: "5",
         option3: "10",
         correctAnswer: "2"
+    },
+    {
+        question: "HTML stands for?",
+        option1: "Hyper Text Markup Language",
+        option2: "High Text Machine Language",
+        option3: "Home Tool Markup Language",
+        correctAnswer: "1"
     }
 ];
 
-// DOM
+
 var ques = document.getElementById("question");
 var option1 = document.getElementById("option1");
 var option2 = document.getElementById("option2");
@@ -27,7 +47,7 @@ var option3 = document.getElementById("option3");
 var button = document.getElementById("btn");
 var timer = document.getElementById("timer");
 
-// Load Question
+
 function loadQuestion() {
     ques.innerText = questions[index].question;
     option1.innerText = questions[index].option1;
@@ -37,12 +57,12 @@ function loadQuestion() {
     button.disabled = true;
 }
 
-// Enable Button
+
 function enableBtn() {
     button.disabled = false;
 }
 
-// Next Question
+
 function nextQuestion() {
     let options = document.getElementsByName("answer");
     let selected = null;
@@ -84,7 +104,7 @@ function nextQuestion() {
 
     button.disabled = true;
 
-    updateProgress(); // ✅ ADD THIS
+    updateProgress(); 
 }
 }
 
@@ -108,5 +128,5 @@ setInterval(function () {
     }
 }, 1000);
 
-// START
+
 loadQuestion();
