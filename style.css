@@ -268,7 +268,7 @@ button:disabled {
     }
 }
 
-/* 💻 LAPTOP */
+
 @media (min-width: 1025px) {
     .quiz-box {
         max-width: 450px;
