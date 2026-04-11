@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz App</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>Quiz App</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-    <div class="quiz-box">
-        <h2 id="timer">01:10</h2>
-        <h1>Quiz App</h1>
+  <div class="quiz-box">
 
-        <p id="question"></p>
+    <h2 id="timer">01:10</h2>
+    <h1>Quiz App</h1>
 
-        <label class="option">
-            <input type="radio" name="answer" value="1" onchange="enableBtn()">
-            <span id="option1"></span>
-        </label>
+    <p id="question"></p>
 
-        <label class="option">
-            <input type="radio" name="answer" value="2" onchange="enableBtn()">
-            <span id="option2"></span>
-        </label>
+    <label>
+      <input type="radio" name="answer" value="1" onchange="enableBtn()">
+      <span id="option1"></span>
+    </label>
 
-        <label class="option">
-            <input type="radio" name="answer" value="3" onchange="enableBtn()">
-            <span id="option3"></span>
-        </label>
+    <label>
+      <input type="radio" name="answer" value="2" onchange="enableBtn()">
+      <span id="option2"></span>
+    </label>
 
-        <button id="btn" disabled onclick="nextQuestion()">Next</button>
-    </div>
+    <label>
+      <input type="radio" name="answer" value="3" onchange="enableBtn()">
+      <span id="option3"></span>
+    </label>
+
+    <button id="btn" disabled onclick="nextQuestion()">Next</button>
+
+  </div>
 </div>
 
-<script src="app.js" defer></script>
+<script src="app.js"></script>
 </body>
 </html>

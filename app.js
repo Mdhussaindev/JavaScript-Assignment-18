@@ -1,7 +1,7 @@
 let index = 0;
 let score = 0;
 
-// questions array (example)
+// Questions
 let questions = [
     {
         question: "2 + 2 = ?",
@@ -15,11 +15,11 @@ let questions = [
         option1: "5",
         option2: "8",
         option3: "10",
-        correctAnswer: "8"
+        correctAnswer: "2"
     }
 ];
 
-// DOM elements
+// DOM
 var ques = document.getElementById("question");
 var option1 = document.getElementById("option1");
 var option2 = document.getElementById("option2");
@@ -27,7 +27,7 @@ var option3 = document.getElementById("option3");
 var button = document.getElementById("btn");
 var timer = document.getElementById("timer");
 
-// load question
+// Load Question
 function loadQuestion() {
     ques.innerText = questions[index].question;
     option1.innerText = questions[index].option1;
@@ -37,25 +37,24 @@ function loadQuestion() {
     button.disabled = true;
 }
 
-// enable button
+// Enable Button
 function enableBtn() {
     button.disabled = false;
 }
 
-// next question
+// Next Question
 function nextQuestion() {
-    var options = document.getElementsByName("answer");
+    let options = document.getElementsByName("answer");
+    let selected = null;
 
-    var selected = null;
-
-    for (var i = 0; i < options.length; i++) {
+    for (let i = 0; i < options.length; i++) {
         if (options[i].checked) {
             selected = options[i].value;
             options[i].checked = false;
         }
     }
 
-    // check answer
+    // CHECK ANSWER (FIXED)
     if (selected === questions[index].correctAnswer) {
         score++;
     }
@@ -65,7 +64,7 @@ function nextQuestion() {
     if (index >= questions.length) {
         document.querySelector(".quiz-box").innerHTML = `
             <h1>Quiz Finished 🎉</h1>
-            <h2>Your Score: ${score}/${questions.length}</h2>
+            <h2>Score: ${score}/${questions.length}</h2>
         `;
         return;
     }
@@ -73,7 +72,7 @@ function nextQuestion() {
     loadQuestion();
 }
 
-// timer
+// TIMER
 let min = 1;
 let sec = 10;
 
@@ -93,5 +92,5 @@ setInterval(function () {
     }
 }, 1000);
 
-// start quiz
+// START
 loadQuestion();
