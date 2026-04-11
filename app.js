@@ -17,6 +17,13 @@ let questions = [
         correctAnswer: "1"
     },
     {
+        question: "2 × 1 = ?",
+        option1: "2",
+        option2: "5",
+        option3: "10",
+        correctAnswer: "2"
+    },
+    {
         question: "Capital of Pakistan?",
         option1: "Lahore",
         option2: "Karachi",
@@ -108,7 +115,7 @@ function nextQuestion() {
 }
 }
 
-// TIMER
+
 let min = 1;
 let sec = 10;
 
