@@ -1,54 +1,89 @@
+let index = 0;
+let score = 0;
+
+// questions array (example)
+let questions = [
+    {
+        question: "2 + 2 = ?",
+        option1: "3",
+        option2: "4",
+        option3: "5",
+        correctAnswer: "2"
+    },
+    {
+        question: "5 + 3 = ?",
+        option1: "5",
+        option2: "8",
+        option3: "10",
+        correctAnswer: "8"
+    }
+];
+
+// DOM elements
+var ques = document.getElementById("question");
+var option1 = document.getElementById("option1");
+var option2 = document.getElementById("option2");
+var option3 = document.getElementById("option3");
+var button = document.getElementById("btn");
+var timer = document.getElementById("timer");
+
+// load question
+function loadQuestion() {
+    ques.innerText = questions[index].question;
+    option1.innerText = questions[index].option1;
+    option2.innerText = questions[index].option2;
+    option3.innerText = questions[index].option3;
+
+    button.disabled = true;
+}
+
+// enable button
+function enableBtn() {
+    button.disabled = false;
+}
+
+// next question
 function nextQuestion() {
     var options = document.getElementsByName("answer");
 
+    var selected = null;
+
     for (var i = 0; i < options.length; i++) {
         if (options[i].checked) {
-            var selected = options[i].value;
-            var userAnswer = questions[index][`option${selected}`];
-            var correctAns = questions[index].correctAnswer;
-
-if (selected === correctAns) {
-    score++;
-}
-
-    if (userAnswer === correctAns)
-
-            if (userAnswer === correctAns) {
-                score++;
-            }
-
+            selected = options[i].value;
             options[i].checked = false;
-            button.disabled = true;
         }
     }
 
-    index++; // ✅ yahan increment
+    // check answer
+    if (selected === questions[index].correctAnswer) {
+        score++;
+    }
+
+    index++;
 
     if (index >= questions.length) {
         document.querySelector(".quiz-box").innerHTML = `
             <h1>Quiz Finished 🎉</h1>
             <h2>Your Score: ${score}/${questions.length}</h2>
-            <p>${Math.round((score / questions.length) * 100)}%</p>
         `;
-    } else {
-        ques.innerText = questions[index].question;
-        option1.innerText = questions[index].option1;
-        option2.innerText = questions[index].option2;
-        option3.innerText = questions[index].option3;
+        return;
     }
+
+    loadQuestion();
 }
 
-var timer = document.getElementById("timer");
-var min = 1;
-var sec = 10;
+// timer
+let min = 1;
+let sec = 10;
 
-var interval = setInterval(function () {
+setInterval(function () {
     timer.innerHTML = `${min}:${sec < 10 ? "0" + sec : sec}`;
     sec--;
 
     if (sec < 0) {
         if (min === 0) {
-            nextQuestion(); // auto next
+            nextQuestion();
             min = 1;
             sec = 10;
         } else {
@@ -58,5 +93,5 @@ var interval = setInterval(function () {
     }
 }, 1000);
 
-nextQuestion();
-
+// start quiz
+loadQuestion();
