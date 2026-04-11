@@ -7,6 +7,7 @@ function nextQuestion() {
             var userAnswer = questions[index - 1][`option${selected}`];
             var correctAns = questions[index - 1].correctAnswer;
 
+
             if (userAnswer === correctAns) {
                 score++;
             }
