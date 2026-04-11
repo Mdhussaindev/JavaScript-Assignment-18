@@ -34,3 +34,24 @@ function nextQuestion() {
     }
 }
 
+var timer = document.getElementById("timer");
+var min = 1;
+var sec = 10;
+
+var interval = setInterval(function () {
+    timer.innerHTML = `${min}:${sec < 10 ? "0" + sec : sec}`;
+    sec--;
+
+    if (sec < 0) {
+        if (min === 0) {
+            nextQuestion(); // auto next
+            min = 1;
+            sec = 10;
+        } else {
+            min--;
+            sec = 59;
+        }
+    }
+}, 1000);
+
+nextQuestion();
