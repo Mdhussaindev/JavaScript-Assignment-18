@@ -20,6 +20,26 @@ body {
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     text-align: center;
+    
+}
+
+.quiz-box {
+    width: 100%;
+    max-width: 400px;
+    background: #333;
+    padding: 20px;
+    border-radius: 12px;
+    box-sizing: border-box;
+
+    /* smooth animation */
+    transition: 0.3s ease;
+}
+
+/* 👇 HOVER EFFECT */
+.quiz-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    background: #3a3a3a;
 }
 
 h1 {
@@ -148,3 +168,4 @@ button:disabled {
     font-size: 20px;
     font-weight: bold;
 }
+
