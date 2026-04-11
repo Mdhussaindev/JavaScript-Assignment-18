@@ -54,6 +54,11 @@ function nextQuestion() {
         }
     }
 
+    function updateProgress() {
+    let percent = (index / questions.length) * 100;
+    document.getElementById("progressBar").style.width = percent + "%";
+}
+
     // CHECK ANSWER (FIXED)
     if (selected === questions[index].correctAnswer) {
         score++;
@@ -70,6 +75,17 @@ function nextQuestion() {
     }
 
     loadQuestion();
+
+    function loadQuestion() {
+    ques.innerText = questions[index].question;
+    option1.innerText = questions[index].option1;
+    option2.innerText = questions[index].option2;
+    option3.innerText = questions[index].option3;
+
+    button.disabled = true;
+
+    updateProgress(); // ✅ ADD THIS
+}
 }
 
 // TIMER
