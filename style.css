@@ -169,3 +169,121 @@ button:disabled {
     font-weight: bold;
 }
 
+body {
+    font-family: Arial;
+    background: #222;
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Center wrapper */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 15px;
+}
+
+/* Quiz box (MAIN CARD) */
+.quiz-box {
+    width: 100%;
+    max-width: 450px;
+    background: #333;
+    padding: 25px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Hover effect */
+.quiz-box:hover {
+    transform: scale(1.02);
+}
+
+/* Question */
+#question {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* Options */
+label {
+    display: block;
+    background: #444;
+    margin: 10px 0;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.3s;
+}
+
+label:hover {
+    background: #555;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    background: limegreen;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+
+/* Timer */
+#timer {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* 📱 MOBILE */
+@media (max-width: 600px) {
+    .quiz-box {
+        max-width: 95%;
+        padding: 18px;
+    }
+
+    #question {
+        font-size: 16px;
+    }
+
+    label {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+}
+
+/* 📟 TABLET */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .quiz-box {
+        max-width: 500px;
+    }
+}
+
+/* 💻 LAPTOP */
+@media (min-width: 1025px) {
+    .quiz-box {
+        max-width: 450px;
+    }
+}
+
+
+
