@@ -137,3 +137,16 @@ setInterval(function () {
 
 
 loadQuestion();
+
+let quizType = localStorage.getItem("quizType");
+
+// example dynamic questions
+if (quizType === "html") {
+    questions = htmlQuestions;
+}
+if (quizType === "css") {
+    questions = cssQuestions;
+}
+if (quizType === "js") {
+    questions = jsQuestions;
+}

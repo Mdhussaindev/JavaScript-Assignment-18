@@ -1,0 +1,156 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auth UI</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    background: linear-gradient(135deg, #141e30, #243b55);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial;
+}
+
+.container-box {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    width: 350px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: 0.3s;
+}
+
+.container-box:hover {
+    transform: scale(1.02);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+h2:hover {
+    color: #00c6ff;        /* color change */
+    transform: scale(1.1); /* thora zoom */
+    letter-spacing: 2px;   /* stylish spacing */
+}
+
+.form-control {
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.btn-custom {
+    width: 100%;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.btn-custom:hover {
+    background: #0d6efd;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.toggle-text {
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+    color: #0d6efd;
+}
+
+.toggle-text:hover {
+    text-decoration: underline;
+}
+
+.hidden {
+    display: none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container-box">
+
+    <!-- Login Form -->
+    <div id="loginForm">
+        <h2>Login</h2>
+        <input type="email" id="loginEmail" class="form-control" placeholder="Email">
+        <input type="password" id="loginPassword" class="form-control" placeholder="Password">
+        <button class="btn btn-primary btn-custom" onclick="login()">Login</button>
+        <p class="toggle-text" onclick="showSignup()">Don't have an account? Signup</p>
+    </div>
+
+    <!-- Signup Form -->
+    <div id="signupForm" class="hidden">
+        <h2>Signup</h2>
+        <input type="text" id="signupName" class="form-control" placeholder="Full Name">
+        <input type="email" id="signupEmail" class="form-control" placeholder="Email">
+        <input type="password" id="signupPassword" class="form-control" placeholder="Password">
+        <button class="btn btn-success btn-custom" onclick="signup()">Signup</button>
+        <p class="toggle-text" onclick="showLogin()">Already have an account? Login</p>
+    </div>
+
+</div>
+
+<script>
+// Toggle Forms
+function showSignup() {
+    document.getElementById("loginForm").classList.add("hidden");
+    document.getElementById("signupForm").classList.remove("hidden");
+}
+
+function showLogin() {
+    document.getElementById("signupForm").classList.add("hidden");
+    document.getElementById("loginForm").classList.remove("hidden");
+}
+
+// Signup Function
+function signup() {
+    let name = document.getElementById("signupName").value;
+    let email = document.getElementById("signupEmail").value;
+    let password = document.getElementById("signupPassword").value;
+
+    let user = { name, email, password };
+
+    localStorage.setItem(email, JSON.stringify(user));
+    alert("Signup Successful!");
+    showLogin();
+}
+
+// Login Function
+function login() {
+    let email = document.getElementById("loginEmail").value;
+    let password = document.getElementById("loginPassword").value;
+
+    let user = JSON.parse(localStorage.getItem(email));
+
+    if (user && user.password === password) {
+        alert("Login Successful!");
+    } else {
+        alert("Invalid Credentials!");
+
+    }
+    window.location.href = "dashboard.html";
+}
+
+
+</script>
+
+</body>
+</html> 

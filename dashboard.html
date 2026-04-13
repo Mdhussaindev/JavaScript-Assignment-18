@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+body {
+    font-family: Arial;
+    background: #222;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.card {
+    background: #333;
+    padding: 20px;
+    width: 200px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+</style>
+
+</head>
+<body>
+
+<h1>Quiz Dashboard</h1>
+<h3 id="username"></h3>
+
+<div class="container">
+
+<div class="card" onclick="startQuiz('html')">HTML Quiz</div>
+<div class="card" onclick="startQuiz('css')">CSS Quiz</div>
+<div class="card" onclick="startQuiz('js')">JavaScript Quiz</div>
+
+</div>
+
+<a href="index.html"></a>
+
+<script>
+let user = JSON.parse(localStorage.getItem("user"));
+document.getElementById("username").innerText = "Welcome " + user.name;
+
+function startQuiz(type) {
+    localStorage.setItem("quizType", type);
+
+    Swal.fire("Starting", type.toUpperCase() + " Quiz", "success");
+
+    setTimeout(() => {
+        window.location.href = "index.html";
+    }, 1200);
+}
+
+</script>
+
+</body>
+</html>
