@@ -56,7 +56,7 @@ document.getElementById("username").innerText = "Welcome " + user.name;
 function startQuiz(type) {
     localStorage.setItem("quizType", type);
 
-    Swal.fire("Starting", type.toUpperCase() + " Quiz", "success");
+    Swal.fire("Starting", type.toUpperCase() + " quiz", "success");
 
     window.location.href = "quiz.html";
 }
