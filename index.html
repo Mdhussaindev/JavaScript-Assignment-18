@@ -11,18 +11,21 @@
 <style>
 body {
     background: linear-gradient(135deg, #141e30, #243b55);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: Arial;
+    padding: 15px; /* mobile gap */
 }
 
+/* Main Box */
 .container-box {
     background: #fff;
     border-radius: 15px;
     padding: 30px;
-    width: 350px;
+    width: 100%;
+    max-width: 350px; /* control size */
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     transition: 0.3s;
 }
@@ -31,11 +34,7 @@ body {
     transform: scale(1.02);
 }
 
-h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
+/* Heading */
 h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -44,20 +43,26 @@ h2 {
 }
 
 h2:hover {
-    color: #00c6ff;        /* color change */
-    transform: scale(1.1); /* thora zoom */
-    letter-spacing: 2px;   /* stylish spacing */
+    color: #00c6ff;
+    transform: scale(1.1);
+    letter-spacing: 2px;
 }
 
+/* Inputs */
 .form-control {
     margin-bottom: 15px;
     border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
 }
 
+/* Button */
 .btn-custom {
     width: 100%;
     border-radius: 10px;
     transition: 0.3s;
+    padding: 10px;
+    font-size: 16px;
 }
 
 .btn-custom:hover {
@@ -66,11 +71,13 @@ h2:hover {
     transform: translateY(-2px);
 }
 
+/* Toggle text */
 .toggle-text {
     text-align: center;
     margin-top: 10px;
     cursor: pointer;
     color: #0d6efd;
+    font-size: 14px;
 }
 
 .toggle-text:hover {
@@ -79,6 +86,39 @@ h2:hover {
 
 .hidden {
     display: none;
+}
+
+/* 📱 Mobile (small screens) */
+@media (max-width: 480px) {
+    .container-box {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+/* 📲 Tablet */
+@media (min-width: 481px) and (max-width: 768px) {
+    .container-box {
+        max-width: 400px;
+    }
+}
+
+/* 💻 Laptop */
+@media (min-width: 769px) and (max-width: 1200px) {
+    .container-box {
+        max-width: 420px;
+    }
+}
+
+/* 🖥️ Large Screens */
+@media (min-width: 1201px) {
+    .container-box {
+        max-width: 450px;
+    }
 }
 </style>
 </head>
@@ -107,6 +147,8 @@ h2:hover {
     </div>
 
 </div>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
 // Toggle Forms
