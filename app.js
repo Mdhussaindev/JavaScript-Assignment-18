@@ -87,7 +87,6 @@ function nextQuestion() {
     document.getElementById("progressBar").style.width = percent + "%";
 }
 
-    // CHECK ANSWER (FIXED)
     if (selected === questions[index].correctAnswer) {
         score++;
     }
@@ -116,7 +115,6 @@ function nextQuestion() {
 }
 }
 
-
 let min = 1;
 let sec = 10;
 
@@ -141,7 +139,6 @@ loadQuestion();
 
 let quizType = localStorage.getItem("quizType");
 
-// example dynamic questions
 if (quizType === "html") {
     questions = htmlQuestions;
 }
