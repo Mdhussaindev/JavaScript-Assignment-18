@@ -47,7 +47,7 @@ body {
 <div class="card" onclick="startQuiz('js')">JavaScript Quiz</div>
 
 </div>
-<a href="Quiz.html"></a>
+
 
 <script>
 let user = JSON.parse(localStorage.getItem("user"));
@@ -58,7 +58,7 @@ function startQuiz(type) {
 
     Swal.fire("Starting", type.toUpperCase() + " Quiz", "success");
 
-    window.location.href = "quiz.html";
+    window.location.href = "Quiz.html";
 }
 
 
