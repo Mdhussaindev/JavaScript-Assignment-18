@@ -1,3 +1,4 @@
+
 let index = 0;
 let score = 0;
 
@@ -150,3 +151,4 @@ if (quizType === "css") {
 if (quizType === "js") {
     questions = jsQuestions;
 }
+

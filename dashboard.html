@@ -48,7 +48,6 @@ body {
 
 </div>
 
-<a href="index.html"></a>
 
 <script>
 let user = JSON.parse(localStorage.getItem("user"));
@@ -59,9 +58,9 @@ function startQuiz(type) {
 
     Swal.fire("Starting", type.toUpperCase() + " Quiz", "success");
 
-    setTimeout(() => {
-        window.location.href = "index.html";
-    }, 1200);
+   function startQuiz() {
+    window.location.href = "quiz.html";
+}
 }
 
 </script>
