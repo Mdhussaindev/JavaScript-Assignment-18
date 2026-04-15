@@ -168,18 +168,13 @@ function signup() {
 
     localStorage.setItem(email, JSON.stringify(user));
 
-    // ✅ user ko login bhi kar d
     localStorage.setItem("currentUser", email);
 
-    alert("Signup Successful 🔥");
+    alert("Signup Successful ");
 
-    // ✅ direct dashboard / quiz pe bhejo
     window.location.href = "dashboard.html"; 
-    // ya agar dashboard nahi hai:
-    // window.location.href = "quiz.html";
 }
 
-// Login Function
 function login() {
     let email = document.getElementById("loginEmail").value;
     let password = document.getElementById("loginPassword").value;
