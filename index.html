@@ -69,7 +69,7 @@ h2:hover {
     transform: translateY(-2px);
 }
 
-/* Toggle text */
+
 .toggle-text {
     text-align: center;
     margin-top: 10px;
@@ -86,7 +86,7 @@ h2:hover {
     display: none;
 }
 
-/* 📱 Mobile (small screens) */
+
 @media (max-width: 480px) {
     .container-box {
         padding: 20px;
@@ -98,21 +98,21 @@ h2:hover {
     }
 }
 
-/* 📲 Tablet */
+
 @media (min-width: 481px) and (max-width: 768px) {
     .container-box {
         max-width: 400px;
     }
 }
 
-/* 💻 Laptop */
+
 @media (min-width: 769px) and (max-width: 1200px) {
     .container-box {
         max-width: 420px;
     }
 }
 
-/* 🖥️ Large Screens */
+
 @media (min-width: 1201px) {
     .container-box {
         max-width: 450px;
@@ -125,7 +125,6 @@ h2:hover {
 
 <div class="container-box">
 
-    <!-- Login Form -->
     <div id="loginForm">
         <h2>Login</h2>
         <input type="email" id="loginEmail" class="form-control" placeholder="Email">
@@ -134,7 +133,7 @@ h2:hover {
         <p class="toggle-text" onclick="showSignup()">Don't have an account? Signup</p>
     </div>
 
-    <!-- Signup Form -->
+    
     <div id="signupForm" class="hidden">
         <h2>Signup</h2>
         <input type="text" id="signupName" class="form-control" placeholder="Full Name">
@@ -149,7 +148,7 @@ h2:hover {
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <script>
-// Toggle Forms
+
 function showSignup() {
     document.getElementById("loginForm").classList.add("hidden");
     document.getElementById("signupForm").classList.remove("hidden");
@@ -167,10 +166,9 @@ function signup() {
 
     let user = { name, email, password };
 
-    // save user
     localStorage.setItem(email, JSON.stringify(user));
 
-    // ✅ user ko login bhi kar do
+    // ✅ user ko login bhi kar d
     localStorage.setItem("currentUser", email);
 
     alert("Signup Successful 🔥");
