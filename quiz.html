@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Quiz App</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+</div>
+
+<div id="loginPage"></div>
+<div id="dashboardPage" style="display:none;"></div>
+<div id="quizPage" style="display:none;"></div>
+
+<div class="container">
+  <div class="quiz-box">
+
+    <h2 id="timer">01:10</h2>
+    <h1>Quiz App</h1>
+
+    <p id="question"></p>
+
+    <div id="progressContainer">
+  <div id="progressBar"></div>
+</div>
+
+    <label>
+      <input type="radio" name="answer" value="1" onchange="enableBtn()">
+      <span id="option1"></span>
+    </label>
+
+    <label>
+      <input type="radio" name="answer" value="2" onchange="enableBtn()">
+      <span id="option2"></span>
+    </label>
+
+    <label>
+      <input type="radio" name="answer" value="3" onchange="enableBtn()">
+      <span id="option3"></span>
+    </label>
+
+    <button id="btn" disabled onclick="nextQuestion()">Next</button>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
+
